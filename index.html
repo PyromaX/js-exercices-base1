@@ -5,8 +5,45 @@
         <title>Exos javascript</title>
     </head>
     <body>
+      <audio preload="auto" src="./Talking Heads - Psycho Killer Remastered Hq.mp3" id="Psycho">
+      </audio>
+      <audio preload="auto" src="./SchubertMoments MusicalN3.mp3" id="Schubert">
+      </audio>
 
-    <!--Votre code ici-->
+      <label for="nom">Quel est votre nom ? </label>
+      <br/>
+      <input type="text" id="nom" name"nom" value="" required/>
+      <br/>
+      <label for="Age">Quel est votre age ? </label>
+      <br/>
+      <input type="number" min="0" max="99" id="age" name"age" value="" required/>
+      <br/>
+      <button onclick="Confirm_form();"/>Confirm</button>
 
-    </body>
-</html>
+    <p id="yolo"><p>
+
+    <script type="text/javascript">
+
+
+    function Confirm_form(){
+      var name = document.getElementById("nom").value;
+      var age = document.getElementById("age").value;
+      var truc = ("bonjour " + name + " !");
+      document.getElementById("yolo").innerHTML = truc;
+      Musique(age)
+    }
+
+    function Musique(age){
+      if (age<18){
+       player = document.getElementById("Schubert");
+      }
+      else{
+        player = document.getElementById("Psycho");
+      }
+    player.play();
+
+    }
+
+    </script>
+  </body>
+<html>
